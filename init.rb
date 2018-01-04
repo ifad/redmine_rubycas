@@ -37,7 +37,7 @@ end
 ActiveSupport::Reloader.to_prepare do
   require_dependency 'account_controller'
   require_dependency 'setting'
-  AccountController.send(:include, AccountControllerPatch)
+  AccountController.send(:prepend, AccountControllerPatch)
   Setting.send(:include, SettingModelPatch)
 
   RedmineRubyCas.configure!
