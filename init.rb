@@ -5,12 +5,12 @@ require 'setting_model_patch'
 Redmine::Plugin.register :redmine_rubycas do
   name 'Redmine RubyCAS plugin'
   author 'Brandon Aaron'
-  description 'This is a plugin for Redmine 2+ that integrates the RubyCAS client.'
-  version '0.1.0'
+  description 'This is a plugin for Redmine 4+ that integrates the RubyCAS client.'
+  version '0.2.0'
   url 'https://github.com/brandonaaron/redmine_rubycas'
   author_url 'http://brandonaaron.net/'
 
-  requires_redmine :version_or_higher => '2.2.2'
+  requires_redmine :version_or_higher => '4.0.0'
 
   menu(:account_menu, :login_without_cas, { :controller => "account", :action => "login_without_cas" },
     :caption => :login_without_cas, :after => :login,
