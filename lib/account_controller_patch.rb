@@ -24,6 +24,7 @@ module AccountControllerPatch
             if RedmineRubyCas.setting("auto_update_users") == "true"
               user.update_attributes(RedmineRubyCas.user_extra_attributes_from_session(session))
             end
+            user.update_last_login_on!
             successful_authentication(user)
           else
             render_error(
